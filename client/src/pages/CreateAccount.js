@@ -9,7 +9,7 @@ export default class CreateAccount extends Component {
     super();
     this.state = {
       username: '',
-      password: '',
+      password: ''
     }
     this.handleSetUsername = this.handleSetUsername.bind(this);
     this.handleSetPassword = this.handleSetPassword.bind(this);
@@ -29,7 +29,7 @@ export default class CreateAccount extends Component {
         localStorage.setItem('uuID', data.data._id);
         setTimeout(() => {
           window.location = '/posts';
-        }, 200);
+        }, 20000);
       })
       .catch((err) => {
         console.log({'error': err.response.error});
@@ -55,14 +55,14 @@ export default class CreateAccount extends Component {
       <FormControl
         id="formHorizontalPassword"
         className="form-control"
-        onChange={this.handleSetPassword}
         placeholder="password"
         type="password"
         value={this.state.password}
+        onChange={this.handleSetPassword}
       />
-      <Link to="/">Already a member? Login here!</Link>
-      <br/>
       <button className="btn btn-default" onClick={this.createUser}>Create Account</button>
+      <br/>
+      <Link to="/">Already a member? Login here!</Link>
       </FormGroup>
       </form>
     )

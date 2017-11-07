@@ -29,7 +29,7 @@ export default class Login extends Component {
         localStorage.setItem('uuID', data.data._id);
         setTimeout(() => {
           window.location = '/posts';
-        });
+        }, 200);
       })
       .catch((err) => {
         console.log(err);
@@ -50,7 +50,7 @@ export default class Login extends Component {
             value={this.state.userName}
           />
         </FormGroup>
-        <FormGroup clasName="Login-group" controlId="formHorizontalPassword">
+        <FormGroup className="Login-group" controlId="formHorizontalPassword">
           Password
           <FormControl
             id="formHorizontalEmail"
