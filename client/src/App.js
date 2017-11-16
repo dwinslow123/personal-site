@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 
 import * as Pages from './pages';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -31,8 +30,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h3>Welcome to Mongo III</h3>
-          <img alt="mongo logo" className="App-logo" src={logo} />
+          <h3>Welcome to the BlogoSphere</h3>
           {loggedIn ? <div className="Inline-button">
             <button className="btn btn-primary btn-sm" onClick={this.doLogout}>Logout</button>
             </div> : null
