@@ -9,15 +9,12 @@ export default class SingleBlogPost extends Component {
     this.state = {
       post: {
         title: 'This is a fake blog post',
-        _id: '1234df',
-        author: 'Patrick',
-        content: {
-          username: 'test',
-          _id: 'qwerwerd1123',
-        },
+        _id: '1',
+        content: 'This is fake',
+        author: '(ObjectID(lakjsdlfkh)',
         comments: [
-          { text: 'This is a fake comment', author: 'Yo mamma' },
-        ],
+          {text: 'This comment is SOooo fake', author: 'Yo mamma'},
+        ]
       },
       comment: '',
     };

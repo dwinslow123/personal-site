@@ -1,14 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const CommentSchema = new Schema({
-  text: String,
-  author: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
-  },
-});
-
 const PostSchema = new Schema({
   title: {
     type: String,
@@ -22,7 +14,13 @@ const PostSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User',
   },
-  comments: [CommentSchema],
+  comments: [{
+    text: String,
+    author: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    }
+  }]
 });
 
 module.exports = mongoose.model('Post', PostSchema);

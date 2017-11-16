@@ -59,7 +59,7 @@ const addCommentsToPost = (req, res) => {
         res.json(secondError);
         return;
       }
-      res.json(lastPost);
+      res.json(newSavePost);
     });
   });
 };

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { FormControl, FormGroup } from 'react-bootstrap';
+import { FormControl, FormGroup, Col, Form, ControlLabel, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import './Login.css';
 
 export default class Login extends Component {
   constructor() {
@@ -38,33 +37,39 @@ export default class Login extends Component {
 
   render() {
     return (
-      <form className="Login-form">
-        <FormGroup className="Login-group" controlId="formHorizontalEmail">
-          User Name
-          <FormControl
-            id="formHorizontalEmail"
-            className="form-control"
-            onChange={this.handleSetUserName}
-            placeholder="User Name"
-            type="text"
-            value={this.state.userName}
-          />
+      <Form horizontal>
+        <FormGroup controlId="formHorizontalEmail" validationState="success">
+          <Col componentClass={ControlLabel} sm={2}>
+            User Name
+          </Col>
+          <Col sm={10}>
+            <FormControl 
+              className="form-control"
+              onChange={this.handleSetUserName}
+              placeholder="User Name"
+              type="text"
+              value={this.state.userName}
+            />
+          </Col>
         </FormGroup>
-        <FormGroup className="Login-group" controlId="formHorizontalPassword">
+        <FormGroup controlId="formHorizontalPassword" validationState="success">
+          <Col componentClass={ControlLabel} sm={2}>
           Password
-          <FormControl
-            id="formHorizontalEmail"
-            className="form-control"
-            onChange={this.handleSetPassword}
-            placeholder="password"
-            type="password"
-            value={this.state.password}
-          />
-          <Link to="/create-user">No account? Sign up here!</Link>
+          </Col>
+          <Col sm={10}>
+            <FormControl
+              className="form-control"
+              onChange={this.handleSetPassword}
+              placeholder="password"
+              type="password"
+              value={this.state.password}
+            />
+          </Col>
+          <Button bsSize="large" type="submit" onClick={this.loginWithUser}>Login</Button>
           <br />
-          <button className="btn btn-default" onClick={this.loginWithUser}>Login</button>
+          <Link to="/create-user">No account? Sign up here!</Link>
         </FormGroup>
-      </form>
+      </Form>
     )
   }
 }
